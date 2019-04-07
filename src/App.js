@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Infolist from './Infolist'
+import AddInfo from './AddInfo'
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    info: [
+      { name: "Mefala", age: 30, belt: 'black', id: 1 },
+      { name: "Boetia", age: 20, belt: 'green', id: 2 },
+      { name: "Kratos", age: 25, belt: 'brown', id: 3 }
+    ]
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        Welcome
+        <Infolist info={this.state.info}/>
+        <AddInfo />
       </div>
     );
   }
